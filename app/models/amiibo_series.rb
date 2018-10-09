@@ -1,0 +1,2 @@
+class AmiiboSeries < ApplicationRecord
+end

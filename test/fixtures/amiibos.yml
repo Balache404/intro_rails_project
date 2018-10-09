@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  series_id: 1
+  character_id: 1
+  game_id: 1
+  image: MyString
+  name: MyString
+  jp_release: 2018-10-09
+  na_release: 2018-10-09
+  type: 
+
+two:
+  series_id: 1
+  character_id: 1
+  game_id: 1
+  image: MyString
+  name: MyString
+  jp_release: 2018-10-09
+  na_release: 2018-10-09
+  type: 

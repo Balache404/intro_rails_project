@@ -1,0 +1,2 @@
+class GameSeries < ApplicationRecord
+end
