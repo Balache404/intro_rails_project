@@ -3,5 +3,5 @@ class Amiibo < ApplicationRecord
 	belongs_to :character, foreign_key: "character_id"
 	belongs_to :amiibo_series, foreign_key: "series_id"
 
-	validates :series_id, :character_id, :game_id, :image, :type, :name, presence: true
+	validates :series_id, :character_id, :game_id, :image, :amiibo_type, :name, presence: true
 end
