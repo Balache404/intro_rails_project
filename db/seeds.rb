@@ -24,7 +24,6 @@ amiibo_url = "http://www.amiiboapi.com/api/amiibo/"
 game_url = "http://www.amiiboapi.com/api/gameseries/"
 series_url = "http://www.amiiboapi.com/api/amiiboseries/"
 character_url = "http://www.amiiboapi.com/api/character/"
-type_url = "http://www.amiiboapi.com/api/type/"
 
 # Seed AmiiboSeries table
 
@@ -44,8 +43,10 @@ uri = URI(character_url)
 response = Net::HTTP.get(uri)
 data = JSON.parse(response)
 
-data["amiibo"].each do |d|
+data["amiibo"].each_with_index do |d, index|
 	Character.create(name: d["name"])
+
+	puts "#{index} characters created" if (index > 0) and (index % 50 == 0)
 end
 
 puts "All characters created"
@@ -68,7 +69,7 @@ uri = URI(amiibo_url)
 response = Net::HTTP.get(uri)
 data = JSON.parse(response)
 
-data["amiibo"].each do |d|
+data["amiibo"].each_with_index do |d , index|
 
 	series = AmiiboSeries.find_by(name: d["amiiboSeries"])
 	character = Character.find_by(name: d["character"])
@@ -82,6 +83,8 @@ data["amiibo"].each do |d|
 					jp_release: d["release"]["jp"].to_date,
 					na_release: d["release"]["na"].to_date,
 					amiibo_type: d["type"])
+
+	puts "#{index} amiibo created" if (index > 0) and (index % 50 == 0)
 end
 
 puts "All amiibo created"
