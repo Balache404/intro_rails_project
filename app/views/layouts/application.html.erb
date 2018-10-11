@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IntroRailsProject</title>
+    <title>All About Amiibo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>All About Amiibo</h1>
+      <p><%= link_to 'About', about_path%></p>
+    </header>
+  <%= yield %>
   </body>
 </html>
