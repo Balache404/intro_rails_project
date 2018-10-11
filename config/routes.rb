@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get 'about', to: 'amiibo#about', as: 'about'
 
-  # root to: 'amiibo#index'
+  root to: 'amiibo#index'
 end
