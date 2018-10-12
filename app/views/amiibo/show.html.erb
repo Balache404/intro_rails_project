@@ -1,3 +1,26 @@
 <h2><%= @amiibo.name %></h2>
 
-<p>This is a test</p>
+<!-- <img src=<%= @amiibo.image %>> -->
+
+<ul>
+	<li>Amiibo Series: <%= @amiibo.amiibo_series.name%></li>
+	<li>Character: <%= @amiibo.character.name%></li>
+	<li>Game Series of Origin: <%= @amiibo.game_series.name%></li>
+	<li>Amiibo Type: <%= @amiibo.amiibo_type%></li>
+	<br>
+	<li>Japanese Release: 
+		<% if @amiibo.jp_release != nil %>
+		<%= @amiibo.jp_release.to_s(:long) %>
+		<% else %>
+		Never Released
+		<% end %>
+	</li>
+	<li>North American Release: 
+		<% if @amiibo.na_release != nil %>
+		<%= @amiibo.na_release.to_s(:long) %>
+		<% else %>
+		Never Released
+		<% end %>
+			
+	</li>
+</ul>
