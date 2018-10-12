@@ -3,7 +3,7 @@
 <ul>
 	<% @amiibos.each do |amiibo| %>
 	<li>
-		<%= amiibo.name %>
+		<%= link_to amiibo.name, amiibo %>
 	</li>
 	<% end %>
 </ul>

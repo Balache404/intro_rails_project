@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'about', to: 'amiibo#about', as: 'about'
   get 'amiibo', to: 'amiibo#list', as: 'amiibo_list'
-  get 'amiibo/:id', to: 'amiibo#show'
+  get 'amiibo/:id', to: 'amiibo#show', as: 'amiibo'
 
   root to: 'amiibo#index'
 end
