@@ -3,5 +3,6 @@ class SearchController < ApplicationController
 	end
 
 	def results
+		@amiibos = Amiibo.where('name LIKE ?', "%#{params[:q]}%")
 	end
 end
