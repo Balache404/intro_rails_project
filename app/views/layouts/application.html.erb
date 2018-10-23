@@ -12,13 +12,12 @@
   <body>
     <header>
       <h1>All About Amiibo</h1>
-      <p><%= link_to 'Home', root_path%> | <%= link_to 'About', about_path%> | 
+      <p><%= link_to 'Home', root_path%> | <%= link_to 'About', about_path%> | </p>
         <%= form_tag(results_search_index_path, method: "get") do %>
           <%= label_tag(:q, "Search for:") %>
           <%= text_field_tag(:q) %>
           <%= submit_tag("Search") %>
         <% end %>
-      </p>
     </header>
   <%= yield %>
   </body>

@@ -1,13 +1,14 @@
 <h2><%= @amiibo.name %></h2>
 
-<img src=<%= @amiibo.image %>>
+<img alt=<%= @amiibo.name %> src=<%= @amiibo.image %>>
 
 <ul>
 	<li>Amiibo Series: <%= @amiibo.amiibo_series.name%></li>
 	<li>Character: <%= @amiibo.character.name%></li>
 	<li>Game Series of Origin: <%= @amiibo.game_series.name%></li>
 	<li>Amiibo Type: <%= @amiibo.amiibo_type%></li>
-	<br>
+</ul>
+<ul>
 	<li>Japanese Release: 
 		<% if @amiibo.jp_release != nil %>
 		<%= @amiibo.jp_release.to_s(:long) %>
